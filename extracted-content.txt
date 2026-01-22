@@ -1,0 +1,205 @@
+
+--- Page 1 ---
+
+📔
+Project Overview
+
+--- Page 2 ---
+
+Project Tuna Guidelines
+Version 1.0
+Last updated: December 17, 2025
+
+--- Page 3 ---
+
+Overview
+Project Tuna asks you to evaluate two AI-generated responses to the same software
+engineering task. Unlike traditional reviews that focus only on final output, this task requires you
+to judge the quality, correctness, and usefulness of each response as if you were reviewing
+real engineering work.
+Your goal is to determine which response demonstrates stronger technical judgment and is
+more suitable to move forward in a real pull request workflow.
+You are not reviewing tone, politeness, or writing style.
+You are evaluating substance, correctness, and execution quality.
+What You Are Evaluating
+For each task, you will review:
+● A task prompt and any provided context
+● Two AI-generated responses (Response A and Response B)
+Your responsibility is to:
+● Identify strengths and weaknesses in each response
+● Apply standardized weakness categories when issues are present
+● Make clear, justified comparisons between the two responses
+All judgments must be based on observable behavior in the responses.
+Do not infer intent or speculate about what the model “meant to do.”
+
+--- Page 4 ---
+
+Instructions
+
+--- Page 5 ---
+
+Setup
+Note: If you get timed out on the platform and get error 409, please open the tool in
+incognito mode to keep working on the tasks or Try to use the skip button to keep
+tasking.
+To begin tasking on the platform, you’ll receive an alias email address at your registered email.
+1. Log in using your alias email at:
+https://feedback.anthropic.com/surveyor/prwriter_snorkel?email_login=true
+a. If presented with a “login with Google” option, do not choose it, it will not work.
+2. You’ll receive an email verification code at your personal email.
+Enter that code to complete login and start tasking.
+Note: The initial assessment is just the one task on the Snorkel platform. Once that's approved
+and you move to the customer platform those are the real project tasks. Please take your time
+here, your work is still reviewed.
+Note: if you have not received your alias, flag it to Christian Arroyo or Juan Pablo Chong
+Step 1: Capability Check
+At the top of the task, you will see the user’s initial prompt, followed by a conversation history.
+This is all just to give you context on the conversation so far. The only prompt you will
+evaluate is the final user message at the bottom of the conversation field.
+NOTE: the prompt you need to review will be at the bottom of the prompt.
+You will have further context and files on the platform:
+
+--- Page 6 ---
+
+Before evaluating anything else, confirm whether you can reasonably evaluate the task.
+Select “Yes, I can evaluate this task” if:
+● The task prompt is understandable
+● Required files or context are present
+● You are familiar with the programming language or domain
+Select “No – technical issues only” if:
+● The task is fundamentally broken
+● The task cannot be evaluated by anyone
+If you select No, you must clearly explain why the task could not be completed.
+Step 2: Prompt Quality Rating (1–5)
+Next, rate the quality of the task prompt itself.
+This rating is only about the prompt, not the model responses.
+
+--- Page 7 ---
+
+Use the following scale:
+● 1–2 (Poor)
+○ Missing required inputs
+○ Unrealistic or impossible task
+○ Requests information the model cannot access
+● 3 (Adequate)
+○ Task is doable but underspecified or too simple
+○ Provides weak signal for evaluating an AI assistant
+● 4–5 (Good)
+○ Realistic and representative of real engineering work
+○ Clear requirements and sufficient context
+○ Challenging but solvable
+
+--- Page 8 ---
+
+Step 3: Weakness Categories
+Read Before Evaluating Responses
+Before reviewing Response A or Response B, familiarize yourself with the weakness categories
+below. You will apply these categories only when they clearly apply, and you must explain
+each issue precisely.
+Note: The examples below are illustrative, not exhaustive. They are meant to clarify how each
+category can appear, but similar issues may fall under the same category even if they are not
+listed here. Evaluators should rely on their judgment, technical expertise, and the task context
+when categorizing errors.
+Weakness Categories
+Weakness Categories with Examples
+Only select categories that clearly apply. If no categories apply, omit the step.
+Step 4: Evaluate Response A
+Evaluate Response A on its own merits.
+
+--- Page 9 ---
+
+Strengths of Response A
+Describe what the response does well. Focus on:
+● Correct understanding of the task
+● Meaningful progress toward a solution
+● Appropriate use of tools or assumptions
+● Alignment between claims and actual work
+Weaknesses of Response A
+If applicable:
+● Select the relevant weakness categories
+● Clearly explain each issue
+● Reference observable evidence in the response
+If no weaknesses apply, state why.
+
+--- Page 10 ---
+
+Step 5: Evaluate Response B
+Repeat the same evaluation process used for Response A.
+Apply the same standards and level of scrutiny.
+
+--- Page 11 ---
+
+Step 6: Compare Responses
+You will now compare Response A and Response B across several questions using a 1–8
+scale.
+Each question is independent. Do not assume the same score applies everywhere.
+Comparison Questions
+● Which response is better overall?
+Your holistic judgment based on correctness, usefulness, and readiness to move
+forward.
+● Which code has better naming and clarity?
+If no code is written, judge clarity of explanations and proposed changes.
+● Which code has better organization and modularity?
+Logical structure, separation of concerns, and scalability.
+● Which code has better error handling and robustness?
+Anticipation of edge cases, diagnostics, and failure modes.
+● Which code has better comments and documentation?
+Useful explanations without unnecessary verbosity.
+● Which code is more ready for review or merge?
+Completeness, minimal remaining gaps, and reviewability.
+
+--- Page 12 ---
+
+● Which code has better logic and correctness?
+Sound reasoning and alignment with the task requirements.
+● Which response is more honest about what it actually did?
+Clear distinction between implemented work and proposals.
+● Which response follows the instructions better?
+Full adherence to user and system constraints.
+Rating Scale
+● 1–2: Response A is clearly better
+● 4–5: Responses are roughly equal
+● 7–8: Response B is clearly better
+You must make a relative judgment, even if both responses are flawed.
+Additional Comments (Optional)
+
+--- Page 13 ---
+
+Use this section to:
+● Call out important tradeoffs
+● Explain edge cases that influenced your decision
+● Add context that is not captured elsewhere
+Do not repeat earlier critiques unless necessary.
+Final Guidance
+● Judge observable behavior only
+● Penalize misleading or false claims
+● Accuracy and depth matter more than polish
+● If your evaluations are clearly justified by what the responses actually did, you are
+completing the task correctly
+Video walkthrough: https://www.loom.com/share/56d1157b51764db4bb80eb815960a83d
+Coming Soon: Final Submission Step on Snorkel
+Platform
+A final submission step will be added to the Snorkel platform. This step will be used to record
+and finalize your evaluation work.
+Important: Completing this step will be required to receive compensation.
+What to Expect
+Final Submission on Snorkel Platform
+After completing your evaluation tasks, return to Snorkel’s platform and locate the final
+submission task.
+You will be asked to answer a short set of questions to confirm and complete your work.
+
+--- Page 14 ---
+
+Questions You May Be Asked
+Expect questions similar to the following:
+● Approximately how long did it take you to complete the task?
+● Did you encounter any nuances, edge cases, or platform issues you would like to call out
+(e.g., unclear instructions, UI issues, or model behavior patterns)?
+All responses will be reviewed to ensure:
+● Evaluation instructions were followed correctly
+● Ratings and selections are internally consistent
+● Explanations are clear and justified
+‼ Key takeaway: This step is confirmation-only. No additional work, files, or modifications are
+required beyond what was already completed during evaluation.
+This workflow is not live yet. Until it becomes available, follow only the active instructions shown
+on the Snorkel platform.

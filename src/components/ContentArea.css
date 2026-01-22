@@ -1,0 +1,17 @@
+.content-area {
+  flex: 1;
+  overflow-y: auto;
+  background-color: #f5f7fa;
+}
+
+.content-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    padding: 1.5rem;
+  }
+}
