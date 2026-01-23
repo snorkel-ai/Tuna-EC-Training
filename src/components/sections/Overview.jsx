@@ -8,13 +8,12 @@ function Overview({ setActiveSection }) {
           <h2 className="card-title">Project Overview</h2>
           <p>
             Project Tuna asks you to evaluate two AI-generated responses to the same software
-            engineering task. Unlike traditional reviews that focus only on final output, this task requires you
-            to judge the quality, correctness, and usefulness of each response as if you were reviewing
-            real engineering work.
+            engineering task. This task requires you
+            to judge the quality, correctness, and utility of each response as if you were reviewing
+            a real pull request.
           </p>
           <p>
-            Your goal is to determine which response demonstrates stronger technical judgment and is
-            more suitable to move forward in a real pull request workflow.
+            Your goal is to determine which response demonstrates a stronger approach and is more suitable for a real-world application.
           </p>
           <p className="note">
             <strong>Important:</strong> You are not reviewing tone, politeness, or writing style.
@@ -24,16 +23,16 @@ function Overview({ setActiveSection }) {
 
         <div className="card">
           <h2 className="card-title">What You Are Evaluating</h2>
-          <p>For each task, you will review:</p>
+          <p>For each task, you will be given:</p>
           <ul className="bullet-list">
             <li>A task prompt and any provided context</li>
             <li>Two AI-generated responses (Response A and Response B)</li>
           </ul>
           <p>Your responsibility is to:</p>
           <ul className="bullet-list">
-            <li>Identify strengths and weaknesses in each response</li>
-            <li>Apply standardized <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('weakness-categories'); }} className="link">weakness categories</a> when issues are present</li>
-            <li>Make clear, justified comparisons between the two responses</li>
+            <li>Read and understand both model responses</li>
+            <li>Identify strengths and weaknesses in each response using standardized <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('weakness-categories'); }} className="link">weakness categories</a></li>
+            <li>Make clear, justified comparative ratings between the two responses</li>
           </ul>
           <p className="note">
             <strong>Key Principle:</strong> All judgments must be based on observable behavior in the responses.
