@@ -4,8 +4,6 @@ const sections = [
   { id: 'overview', label: 'Overview', icon: '📋' },
   { id: 'quick-start', label: 'High-Level Workflow', icon: '🚀' },
   { id: 'task-workflow', label: 'Detailed Workflow', icon: '⚙️' },
-  { id: 'weakness-categories', label: 'Weakness Categories', icon: '🔍' },
-  { id: 'comparison-questions', label: 'Comparison Questions', icon: '⚖️' },
   { id: 'best-practices', label: 'Best Practices', icon: '⭐' },
 ]
 

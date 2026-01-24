@@ -1,8 +1,6 @@
 import QuickStart from './sections/QuickStart'
 import Overview from './sections/Overview'
 import TaskWorkflow from './sections/TaskWorkflow'
-import WeaknessCategories from './sections/WeaknessCategories'
-import ComparisonQuestions from './sections/ComparisonQuestions'
 import BestPractices from './sections/BestPractices'
 import './ContentArea.css'
 
@@ -15,10 +13,6 @@ function ContentArea({ activeSection, setActiveSection }) {
         return <Overview setActiveSection={setActiveSection} />
       case 'task-workflow':
         return <TaskWorkflow setActiveSection={setActiveSection} />
-      case 'weakness-categories':
-        return <WeaknessCategories />
-      case 'comparison-questions':
-        return <ComparisonQuestions />
       case 'best-practices':
         return <BestPractices setActiveSection={setActiveSection} />
       default:

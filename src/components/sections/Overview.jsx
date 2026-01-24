@@ -25,19 +25,14 @@ function Overview({ setActiveSection }) {
           <h2 className="card-title">What You Are Evaluating</h2>
           <p>For each task, you will be given:</p>
           <ul className="bullet-list">
-            <li>
-              A task prompt
-              <ul className="bullet-list">
-                <li>Any previous prompts and responses as context</li>
-              </ul>
-            </li>
+            <li>A final task prompt and all previous turns (prompts and responses) in the trace</li>
             <li>Two AI-generated responses to the task prompt</li>
           </ul>
           <p>Your responsibility is to:</p>
           <ul className="bullet-list">
             <li>Read and understand both model responses</li>
-            <li>Identify strengths and weaknesses in each response using standardized <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('weakness-categories'); }} className="link">weakness categories</a></li>
-            <li>Make clear, justified comparative ratings between the two responses</li>
+            <li>Identify strengths and weaknesses in each response using standardized weakness categories</li>
+            <li>Make clear, justified, comparative ratings between the two responses</li>
           </ul>
           <p className="note">
             <strong>Key Principle:</strong> All judgments must be based on observable behavior in the responses.

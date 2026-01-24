@@ -5,6 +5,7 @@ import anthropicWelcomeImage from '../../../images/Anthropic_welcome.png'
 import capabilityCheckImage from '../../../images/capability_check.png'
 import responseA1Image from '../../../images/responseA_1.png'
 import platform1Image from '../../../images/platform1.png'
+import tunaSubmissionReviewImage from '../../../images/tuna-submission-review2.png'
 
 function QuickStart({ setActiveSection }) {
   const [currentStep, setCurrentStep] = useState(0)
@@ -16,8 +17,8 @@ function QuickStart({ setActiveSection }) {
       image: assessmentImage,
       content: (
         <>
-          <p>Take the Project Tuna assessment on <a href="https://experts.snorkel-ai.com/home" target="_blank" rel="noopener noreferrer" className="link">the Snorkel platform</a></p>
-          <p className="step-detail">(Tuna-Model-Review-Assessment)</p>
+          <p>Take the Project Tuna assessment (Tuna-Model-Review-Assessment) on <a href="https://experts.snorkel-ai.com/home" target="_blank" rel="noopener noreferrer" className="link">the Snorkel platform</a>.</p>
+          <p className="step-detail">The assessment determines if you are eligible to task on Project Tuna. You will have one chance to pass the assessment and will not be able to task if you do not pass, so please take your time and do the best you can!</p>
         </>
       ),
       type: 'one-time'
@@ -25,10 +26,11 @@ function QuickStart({ setActiveSection }) {
     {
       number: 2,
       badge: 'One-time',
+      visual: 'slack',
       content: (
         <>
-          <p>Receive email alias via Slack</p>
-          <p className="step-detail">This alias is what you will use to log in to the external tasking platform.</p>
+          <p>Once you pass the assessment, you will receive an email alias via Slack.</p>
+          <p className="step-detail">This alias is what you will use to log in to the external tasking platform. This external platform is where the majority of your tasking is performed.</p>
         </>
       ),
       type: 'one-time'
@@ -37,17 +39,20 @@ function QuickStart({ setActiveSection }) {
       number: 3,
       image: capabilityCheckImage,
       content: (
-        <p>Go to <a href="https://feedback.anthropic.com/surveyor/prwriter_snorkel?email_login=true" target="_blank" rel="noopener noreferrer" className="link">the external platform</a> to create your task</p>
+        <>
+          <p>Go to <a href="https://feedback.anthropic.com/surveyor/prwriter_snorkel?email_login=true" target="_blank" rel="noopener noreferrer" className="link">the external platform</a> and log in to create your task - review and evaluate the given prompt and model responses.</p>
+          <p className="step-detail">Click Submit at the end to complete this step.</p>
+        </>
       ),
       type: 'regular'
     },
     {
       number: 4,
-      image: platform1Image,
+      image: tunaSubmissionReviewImage,
       content: (
         <>
-          <p>Come back to <a href="https://experts.snorkel-ai.com/home" target="_blank" rel="noopener noreferrer" className="link">the Snorkel platform</a> to claim and finalize your task</p>
-          <p className="step-detail">(Tuna-Submission-Review)</p>
+          <p>After clicking Submit on the external platform, return to the Tuna-Submission-Review project on <a href="https://experts.snorkel-ai.com/home" target="_blank" rel="noopener noreferrer" className="link">the Snorkel platform</a> to claim and finalize your task submission.</p>
+          <p className="step-detail">Finalizing your task on the Snorkel platform is what signifies task completion.</p>
         </>
       ),
       type: 'regular'
@@ -55,7 +60,7 @@ function QuickStart({ setActiveSection }) {
     {
       number: 5,
       visual: 'money',
-      content: <p>Get paid for your accepted task!</p>,
+      content: <p>Once our expert reviewers approve your task, you get paid!</p>,
       type: 'success'
     }
   ]
@@ -89,8 +94,13 @@ function QuickStart({ setActiveSection }) {
                     {step.badge && <div className="step-badge">{step.badge}</div>}
                     {step.content}
                     {step.image && (
-                      <div className={`step-image-container ${step.number === 4 ? 'step-4-image' : ''}`}>
+                      <div className={`step-image-container ${step.number === 1 ? 'step-1-image' : step.number === 4 ? 'step-4-image' : ''}`}>
                         <img src={step.image} alt={`Step ${step.number} visual`} className="step-image" />
+                      </div>
+                    )}
+                    {step.visual === 'slack' && (
+                      <div className="slack-visual">
+                        <div className="slack-emoji">💬</div>
                       </div>
                     )}
                     {step.visual === 'money' && (

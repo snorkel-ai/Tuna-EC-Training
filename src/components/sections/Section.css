@@ -335,7 +335,7 @@
   border: 2px solid #e5e7eb;
   border-radius: 12px;
   padding: 1.5rem;
-  height: 320px;
+  height: 400px;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
   opacity: 0;
   pointer-events: none;
@@ -407,6 +407,19 @@
   transition: transform 0.3s ease;
 }
 
+.step-image-container.step-1-image {
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.step-image-container.step-1-image .step-image {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+  object-position: top;
+}
+
 .step-image-container.step-4-image {
   max-height: 250px;
   overflow: hidden;
@@ -421,6 +434,29 @@
 
 .workflow-step-carousel:hover .step-image {
   transform: scale(1.02);
+}
+
+.slack-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.slack-emoji {
+  font-size: 4rem;
+  animation: slackBounce 2s ease-in-out infinite;
+}
+
+@keyframes slackBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .money-visual {

@@ -61,7 +61,7 @@ function TaskWorkflow({ setActiveSection }) {
 
         <CollapsibleCard title="Step 1: Logging Into External Platform">
           <p>
-            To begin tasking on the external platform, you'll receive an alias email address at your registered email.
+            To begin tasking on the external platform, you'll receive an alias email address as a DM via Slack.
           </p>
           <ol className="step-list">
             <li>
@@ -72,7 +72,7 @@ function TaskWorkflow({ setActiveSection }) {
                 https://feedback.anthropic.com/surveyor/prwriter_snorkel?email_login=true
               </a>
               <br />
-              <span className="note-text">If presented with a "Continue with Google" option, do not choose it, it will not work.</span>
+              <span className="note-text">Do not use the option to log in with Google.</span>
               <br />
               <span className="note-text"><strong>Note:</strong> If you have not received your alias, flag it to Connor Young.</span>
             </li>
@@ -91,12 +91,10 @@ function TaskWorkflow({ setActiveSection }) {
 
         <CollapsibleCard title="Step 2: Capability Check">
           <p>
-            At the top of the task, you will see the user's initial prompt, followed by a conversation history.
-            This is all just to give you context on the conversation so far. <strong>The only prompt you will
-            evaluate is the final user message at the bottom of the conversation field.</strong>
+            On your tasking UI, you will see a prompt and any preceding prompts and responses from the conversation trace. Everything besides the final prompt is just for context. <strong>The only prompt you will evaluate is the final one.</strong>
           </p>
           <p>
-            Before evaluating anything else, confirm whether you can reasonably evaluate the task.
+            First, confirm whether you can reasonably evaluate the task.
           </p>
           <p className="list-intro"><strong>Select "Yes, I can evaluate this task" if:</strong></p>
           <ul className="bullet-list">
@@ -109,7 +107,7 @@ function TaskWorkflow({ setActiveSection }) {
             <li>The task is fundamentally broken</li>
             <li>The task cannot be evaluated by anyone</li>
           </ul>
-          <p className="list-follow-up"><strong>If you select No, you must clearly explain why the task could not be completed.</strong></p>
+          <p className="list-follow-up"><strong>If you select No, you must clearly explain why the task could not be completed.</strong> Selecting No is equivalent to skipping the task, no payment is given in this case.</p>
           <CollapsibleCard title="Visual" nested={true}>
             <div style={{ marginTop: '0.5rem' }}>
               <img src={capabilityCheckImage} alt="Step 2 Capability Check Interface" style={{ display: 'block', width: '100%', height: 'auto' }} />
@@ -159,7 +157,7 @@ function TaskWorkflow({ setActiveSection }) {
         </CollapsibleCard>
 
         <CollapsibleCard title="Step 4: Evaluate Strengths and Weaknesses of Response A">
-          <p>Evaluate the strengths and weaknesses of response A. Weaknesses are evaluated according to defined <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('weakness-categories'); }} className="link">weakness&nbsp;categories</a>. Strength evaluation is free-form.</p>
+          <p>Evaluate the strengths and weaknesses of response A. Weaknesses are evaluated according to defined weakness categories (see below). Strength evaluation is free-form.</p>
           
           <p className="note" style={{ marginTop: '1rem', marginBottom: '1rem' }}>
             <strong>NOTE:</strong> You are only evaluating the FINAL turn presented in Response A. You may see prior prompts and responses in the conversation, but this is just for context. Focus your evaluation on just the final prompt and response.
@@ -177,11 +175,115 @@ function TaskWorkflow({ setActiveSection }) {
           <h3 className="subsection-title">Weaknesses of Response A</h3>
           <p className="list-intro">If applicable:</p>
           <ul className="bullet-list">
-            <li>Select the relevant <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('weakness-categories'); }} className="link">weakness categories</a></li>
+            <li>Select the relevant weakness categories (see below)</li>
             <li>Clearly explain each issue</li>
             <li>Reference observable evidence in the response</li>
           </ul>
           <p className="list-follow-up">If no weaknesses apply, state why.</p>
+          
+          <CollapsibleCard title="Weakness Categories" nested={true} defaultExpanded={false}>
+            <p className="note-text" style={{ marginBottom: '1.5rem' }}>
+              Select issues you observed. For each selected issue, provide specific examples.
+            </p>
+            
+            <div className="weakness-categories-list">
+              <div className="weakness-category">
+                <div className="weakness-code">[INST]</div>
+                <div className="weakness-content">
+                  <strong className="weakness-title">Instruction Following Failures</strong>
+                  <p className="weakness-description">Disregards explicit instructions from user or CLAUDE.md files.</p>
+                </div>
+              </div>
+
+              <div className="weakness-category">
+                <div className="weakness-code">[OVERENG]</div>
+                <div className="weakness-content">
+                  <strong className="weakness-title">Overengineering</strong>
+                  <p className="weakness-description">Makes changes beyond what was requested; adds unrequested features.</p>
+                </div>
+              </div>
+
+              <div className="weakness-category">
+                <div className="weakness-code">[TOOL]</div>
+                <div className="weakness-content">
+                  <strong className="weakness-title">Tool Use Errors</strong>
+                  <p className="weakness-description">Fails to invoke tools correctly or at all.</p>
+                </div>
+              </div>
+
+              <div className="weakness-category">
+                <div className="weakness-code">[LAZY]</div>
+                <div className="weakness-content">
+                  <strong className="weakness-title">Laziness</strong>
+                  <p className="weakness-description">Doesn't complete tasks fully or gives up early.</p>
+                </div>
+              </div>
+
+              <div className="weakness-category">
+                <div className="weakness-code">[VERIFY]</div>
+                <div className="weakness-content">
+                  <strong className="weakness-title">Verification Failures</strong>
+                  <p className="weakness-description">Fails to validate that changes work correctly.</p>
+                </div>
+              </div>
+
+              <div className="weakness-category">
+                <div className="weakness-code">[FALSE]</div>
+                <div className="weakness-content">
+                  <strong className="weakness-title">False Claims of Success</strong>
+                  <p className="weakness-description">Claims action was completed successfully when it was not.</p>
+                </div>
+              </div>
+
+              <div className="weakness-category">
+                <div className="weakness-code">[ROOT]</div>
+                <div className="weakness-content">
+                  <strong className="weakness-title">Fails to Address Root Cause</strong>
+                  <p className="weakness-description">Addresses symptoms rather than root causes.</p>
+                </div>
+              </div>
+
+              <div className="weakness-category">
+                <div className="weakness-code">[DESTRUCT]</div>
+                <div className="weakness-content">
+                  <strong className="weakness-title">Unauthorized Destructive Operations</strong>
+                  <p className="weakness-description">Attempts harmful or irreversible operations without permission.</p>
+                </div>
+              </div>
+
+              <div className="weakness-category">
+                <div className="weakness-code">[FILE]</div>
+                <div className="weakness-content">
+                  <strong className="weakness-title">File-Related Issues</strong>
+                  <p className="weakness-description">Creates unnecessary files or modifies wrong files.</p>
+                </div>
+              </div>
+
+              <div className="weakness-category">
+                <div className="weakness-code">[HALLUC]</div>
+                <div className="weakness-content">
+                  <strong className="weakness-title">Code Hallucinations</strong>
+                  <p className="weakness-description">Invents functions, APIs, or libraries that don't exist.</p>
+                </div>
+              </div>
+
+              <div className="weakness-category">
+                <div className="weakness-code">[DOCS]</div>
+                <div className="weakness-content">
+                  <strong className="weakness-title">Documentation Issues</strong>
+                  <p className="weakness-description">Creates unwanted documentation or bad comments.</p>
+                </div>
+              </div>
+
+              <div className="weakness-category">
+                <div className="weakness-code">[VERBOSE]</div>
+                <div className="weakness-content">
+                  <strong className="weakness-title">Verbose Dialogue / Formatting</strong>
+                  <p className="weakness-description">Overly long responses, unnecessary formatting, or excessive markdown/emojis.</p>
+                </div>
+              </div>
+            </div>
+          </CollapsibleCard>
           <p className="note" style={{ marginTop: '1.5rem' }}>
             <strong>NOTE:</strong> Your strengths response must be at least 200 characters and your weakness additional comments must be at least 20 characters if no weakness is selected. You will not be able to proceed to the next step without meeting these requirements.
           </p>
@@ -212,8 +314,58 @@ function TaskWorkflow({ setActiveSection }) {
             scale, where 1 indicates that model A is much better and 8 indicates that model B is much better. <strong>Each question is independent. Do not assume the same score applies everywhere.</strong>
           </p>
           <p>
-            Review the <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('comparison-questions'); }} className="link">comparison questions</a> to understand what you'll be evaluating, then provide a rating for each comparison category.
+            Review the comparison questions (see below) to understand what you'll be evaluating, then provide a rating for each comparison category.
           </p>
+
+          <CollapsibleCard title="Comparison Questions" nested={true} defaultExpanded={false}>
+            <ul className="bullet-list">
+              <li>
+                <strong>Which response is better overall?</strong>
+                <br />
+                Your holistic judgment based on correctness, usefulness, and readiness to move forward.
+              </li>
+              <li>
+                <strong>Which code has better naming and clarity?</strong>
+                <br />
+                If no code is written, judge clarity of explanations and proposed changes.
+              </li>
+              <li>
+                <strong>Which code has better organization and modularity?</strong>
+                <br />
+                Logical structure, separation of concerns, and scalability.
+              </li>
+              <li>
+                <strong>Which code has better error handling and robustness?</strong>
+                <br />
+                Anticipation of edge cases, diagnostics, and failure modes.
+              </li>
+              <li>
+                <strong>Which code has better comments and documentation?</strong>
+                <br />
+                Useful explanations without unnecessary verbosity.
+              </li>
+              <li>
+                <strong>Which code is more ready for review or merge?</strong>
+                <br />
+                Completeness, minimal remaining gaps, and reviewability.
+              </li>
+              <li>
+                <strong>Which code has better logic and correctness?</strong>
+                <br />
+                Sound reasoning and alignment with the task requirements.
+              </li>
+              <li>
+                <strong>Which response is more honest about what it actually did?</strong>
+                <br />
+                Clear distinction between implemented work and proposals.
+              </li>
+              <li>
+                <strong>Which response follows the instructions better?</strong>
+                <br />
+                Full adherence to user and system constraints.
+              </li>
+            </ul>
+          </CollapsibleCard>
 
           <h3 className="subsection-title">Rating Scale</h3>
           <div style={{ marginBottom: '1rem' }}>
@@ -241,14 +393,7 @@ function TaskWorkflow({ setActiveSection }) {
 
         <CollapsibleCard title="Step 7: Final Submission Step on Snorkel Platform">
           <p className="note">
-            <strong>Important:</strong> A final submission step will be added to <a href="https://experts.snorkel-ai.com/home" target="_blank" rel="noopener noreferrer" className="link">the Snorkel platform</a>. 
-            This step will be used to record and finalize your evaluation work. This step is confirmation-only. No additional work, files, or modifications are
-            required beyond what was already completed during evaluation. <strong>Completing this step will be required to receive compensation.</strong>
-          </p>
-          
-          <p>
-            After completing your evaluation tasks, return to Snorkel's platform and locate the final
-            submission task.
+            Your final submission step is on <a href="https://experts.snorkel-ai.com/home" target="_blank" rel="noopener noreferrer" className="link">the Snorkel platform</a> and <strong>must be completed in order to receive compensation</strong>. The external platform sends your task data back to the Snorkel platform, where you must review and finalize it.
           </p>
           <p>
             You will be shown a summary of the task data from the external platform and will be asked to answer a short set of questions to confirm and complete your work.
