@@ -5,10 +5,25 @@
 }
 
 .content-container {
-  max-width: 1000px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 2rem;
   overflow-x: visible;
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .content-container {
+    max-width: 1400px;
+    padding: 2rem 3rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .content-container {
+    max-width: 1600px;
+    padding: 2rem 4rem;
+  }
 }
 
 @media (max-width: 768px) {

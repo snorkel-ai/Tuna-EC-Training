@@ -27,7 +27,7 @@ function QuickStart({ setActiveSection }) {
       badge: 'One-time',
       content: (
         <>
-          <p>Receive email alias</p>
+          <p>Receive email alias via Slack</p>
           <p className="step-detail">This alias is what you will use to log in to the external tasking platform.</p>
         </>
       ),
@@ -43,7 +43,7 @@ function QuickStart({ setActiveSection }) {
     },
     {
       number: 4,
-      image: responseA1Image,
+      image: platform1Image,
       content: (
         <>
           <p>Come back to <a href="https://experts.snorkel-ai.com/home" target="_blank" rel="noopener noreferrer" className="link">the Snorkel platform</a> to claim and finalize your task</p>
@@ -55,7 +55,7 @@ function QuickStart({ setActiveSection }) {
     {
       number: 5,
       visual: 'money',
-      content: <p>Receive compensation!</p>,
+      content: <p>Get paid for your accepted task!</p>,
       type: 'success'
     }
   ]
@@ -82,14 +82,14 @@ function QuickStart({ setActiveSection }) {
                 <div
                   key={index}
                   className={`workflow-step-carousel ${step.type} ${index === currentStep ? 'active' : ''}`}
-                  style={{ transform: `translateX(${(index - currentStep) * 100}%)` }}
+                  style={{ transform: `translateX(${(index - currentStep) * 100}%) translateY(-50%)` }}
                 >
                   <div className="step-number">{step.number}</div>
                   <div className="step-content">
                     {step.badge && <div className="step-badge">{step.badge}</div>}
                     {step.content}
                     {step.image && (
-                      <div className="step-image-container">
+                      <div className={`step-image-container ${step.number === 4 ? 'step-4-image' : ''}`}>
                         <img src={step.image} alt={`Step ${step.number} visual`} className="step-image" />
                       </div>
                     )}
@@ -97,7 +97,6 @@ function QuickStart({ setActiveSection }) {
                       <div className="money-visual">
                         <div className="piggy-bank-container">
                           <div className="piggy-bank">🐷</div>
-                          <div className="coin-slot"></div>
                           <div className="falling-coins">
                             <div className="falling-coin coin-1">🪙</div>
                             <div className="falling-coin coin-2">🪙</div>

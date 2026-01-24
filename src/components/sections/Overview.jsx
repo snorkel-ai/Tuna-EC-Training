@@ -31,7 +31,7 @@ function Overview({ setActiveSection }) {
                 <li>Any previous prompts and responses as context</li>
               </ul>
             </li>
-            <li>Two AI-generated responses (Response A and Response B)</li>
+            <li>Two AI-generated responses to the task prompt</li>
           </ul>
           <p>Your responsibility is to:</p>
           <ul className="bullet-list">
