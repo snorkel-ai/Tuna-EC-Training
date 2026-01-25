@@ -29,11 +29,12 @@ function GettingStarted() {
             </li>
             <li>You'll receive an email verification code at your personal email. Enter that code to complete login and start tasking.</li>
           </ol>
-          <p className="note">
+          {/* ASSESSMENT REFERENCE - COMMENTED OUT */}
+          {/* <p className="note">
             <strong>Important:</strong> The initial assessment is just the one task on the Snorkel platform. Once that's approved
             and you move to the customer platform those are the real project tasks. Please take your time
             here, your work is still reviewed.
-          </p>
+          </p> */}
           <p className="note">
             <strong>Note:</strong> If you have not received your alias, flag it to Connor Young.
           </p>

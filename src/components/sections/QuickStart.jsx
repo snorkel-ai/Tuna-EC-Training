@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './Section.css'
-import assessmentImage from '../../../images/assessment.png'
+// import assessmentImage from '../../../images/assessment.png'
 import anthropicWelcomeImage from '../../../images/Anthropic_welcome.png'
 import capabilityCheckImage from '../../../images/capability_check.png'
 import responseA1Image from '../../../images/responseA_1.png'
@@ -11,32 +11,33 @@ function QuickStart({ setActiveSection }) {
   const [currentStep, setCurrentStep] = useState(0)
 
   const steps = [
+    // ASSESSMENT STEP - COMMENTED OUT
+    // {
+    //   number: 1,
+    //   badge: 'One-time',
+    //   image: assessmentImage,
+    //   content: (
+    //     <>
+    //       <p>Take the Project Tuna assessment (Tuna-Model-Review-Assessment) on <a href="https://experts.snorkel-ai.com/home" target="_blank" rel="noopener noreferrer" className="link">the Snorkel platform</a>.</p>
+    //       <p className="step-detail">The assessment determines if you are eligible to task on Project Tuna. You will have one chance to pass the assessment and will not be able to task if you do not pass, so please take your time and do the best you can!</p>
+    //     </>
+    //   ),
+    //   type: 'one-time'
+    // },
     {
       number: 1,
-      badge: 'One-time',
-      image: assessmentImage,
-      content: (
-        <>
-          <p>Take the Project Tuna assessment (Tuna-Model-Review-Assessment) on <a href="https://experts.snorkel-ai.com/home" target="_blank" rel="noopener noreferrer" className="link">the Snorkel platform</a>.</p>
-          <p className="step-detail">The assessment determines if you are eligible to task on Project Tuna. You will have one chance to pass the assessment and will not be able to task if you do not pass, so please take your time and do the best you can!</p>
-        </>
-      ),
-      type: 'one-time'
-    },
-    {
-      number: 2,
       badge: 'One-time',
       visual: 'slack',
       content: (
         <>
-          <p>Once you pass the assessment, you will receive an email alias via Slack.</p>
+          <p>You will receive an email alias via Slack.</p>
           <p className="step-detail">This alias is what you will use to log in to the external tasking platform. This external platform is where the majority of your tasking is performed.</p>
         </>
       ),
       type: 'one-time'
     },
     {
-      number: 3,
+      number: 2,
       image: capabilityCheckImage,
       content: (
         <>
@@ -47,7 +48,7 @@ function QuickStart({ setActiveSection }) {
       type: 'regular'
     },
     {
-      number: 4,
+      number: 3,
       image: tunaSubmissionReviewImage,
       content: (
         <>
@@ -58,7 +59,7 @@ function QuickStart({ setActiveSection }) {
       type: 'regular'
     },
     {
-      number: 5,
+      number: 4,
       visual: 'money',
       content: <p>Once our expert reviewers approve your task, you get paid!</p>,
       type: 'success'
@@ -94,7 +95,7 @@ function QuickStart({ setActiveSection }) {
                     {step.badge && <div className="step-badge">{step.badge}</div>}
                     {step.content}
                     {step.image && (
-                      <div className={`step-image-container ${step.number === 1 ? 'step-1-image' : step.number === 4 ? 'step-4-image' : ''}`}>
+                      <div className={`step-image-container ${step.number === 3 ? 'step-4-image' : ''}`}>
                         <img src={step.image} alt={`Step ${step.number} visual`} className="step-image" />
                       </div>
                     )}

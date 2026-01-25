@@ -63,9 +63,13 @@ function TaskWorkflow({ setActiveSection }) {
           <p>
             To begin tasking on the external platform, you'll receive an alias email address as a DM via Slack.
           </p>
+          <p className="note-text"><strong>Note:</strong> If you have not received your alias, flag it to Connor Young.</p>
+          <p>
+            You will also have your personal email added to a Google Group. This Google Group is what allows you to receive the verification code to your personal email, you do not need to use it for anything.
+          </p>
           <ol className="step-list">
             <li>
-              Log in using your alias email at: <a href="https://feedback.anthropic.com/surveyor/prwriter_snorkel?email_login=true" 
+              Log in using your <strong>alias email</strong> at: <a href="https://feedback.anthropic.com/surveyor/prwriter_snorkel?email_login=true" 
                  target="_blank" 
                  rel="noopener noreferrer"
                  className="link">
@@ -73,10 +77,8 @@ function TaskWorkflow({ setActiveSection }) {
               </a>
               <br />
               <span className="note-text">Do not use the option to log in with Google.</span>
-              <br />
-              <span className="note-text"><strong>Note:</strong> If you have not received your alias, flag it to Connor Young.</span>
             </li>
-            <li>You'll receive an email verification code at your personal email. Enter that code to complete login and start tasking.</li>
+            <li>You'll receive an email verification code at your <strong>personal email</strong>. Enter that code to complete login and start tasking.</li>
           </ol>
           <p className="note">
             <strong>Note:</strong> If you get timed out on the platform and get error 409, please open the tool in
