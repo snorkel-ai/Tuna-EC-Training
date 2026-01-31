@@ -17,6 +17,8 @@ function OfficeHours() {
               }}
             >
               <source src="/Tuna-EC-Training/tunaoh.mp4" type="video/mp4" />
+              <source src="./tunaoh.mp4" type="video/mp4" />
+              <source src="tunaoh.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
