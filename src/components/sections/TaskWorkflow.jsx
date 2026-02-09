@@ -69,11 +69,11 @@ function TaskWorkflow({ setActiveSection }) {
           </p>
           <ol className="step-list">
             <li>
-              Log in using your <strong>alias email</strong> at: <a href="https://feedback.anthropic.com/surveyor/prwriter_0123?email_login=true" 
+              Log in using your <strong>alias email</strong> at: <a href="https://feedback.anthropic.com/surveyor/hf_pr_writer_0206_pt2?email_login=true" 
                  target="_blank" 
                  rel="noopener noreferrer"
                  className="link">
-                https://feedback.anthropic.com/surveyor/prwriter_0123?email_login=true
+                https://feedback.anthropic.com/surveyor/hf_pr_writer_0206_pt2?email_login=true
               </a>
               <br />
               <span className="note-text">Do not use the option to log in with Google.</span>
