@@ -30,7 +30,7 @@ function QuickStart({ setActiveSection }) {
       visual: 'slack',
       content: (
         <>
-          <p>You will receive an email alias via Slack.</p>
+          <p>You will receive an email alias via Slack or Email.</p>
           <p className="step-detail">This alias is what you will use to log in to the external tasking platform. This external platform is where the majority of your tasking is performed.</p>
         </>
       ),
@@ -41,7 +41,7 @@ function QuickStart({ setActiveSection }) {
       image: capabilityCheckImage,
       content: (
         <>
-          <p>Go to <a href="https://feedback.anthropic.com/surveyor/hf_pr_writer_0206_pt2?email_login=true" target="_blank" rel="noopener noreferrer" className="link">the external platform</a> and log in to create your task - review and evaluate the given prompt and model responses.</p>
+          <p>Go to <a href="https://feedback.anthropic.com/surveyor/prwriter_transcript_review_snorkel_feb?email_login=true" target="_blank" rel="noopener noreferrer" className="link">the external platform</a> and log in to create your task - review and evaluate the given prompt and model responses.</p>
           <p className="step-detail">Click Submit at the end to complete this step.</p>
         </>
       ),
