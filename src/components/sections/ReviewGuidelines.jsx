@@ -59,7 +59,7 @@ function ReviewGuidelines() {
           <ul className="bullet-list">
             <li><strong>Be specific:</strong> Point out exactly what was wrong or what could be improved. Vague feedback like "needs work" is not helpful.</li>
             <li><strong>Be constructive:</strong> Explain why something is an issue and how it could be fixed. Help evaluators understand what good feedback looks like.</li>
-            <li><strong>Highlight positives:</strong> If parts of the submission were good, mention them. This helps evaluators know what to continue doing.</li>
+            <li><strong>Highlight positives:</strong> If parts of the submission were good, mention what exactly they did well. Vague feedback like "good job" is not helpful.</li>
             <li><strong>Reference examples:</strong> When possible, point to specific parts of their submission or reference the automated eval feedback to make your points clear.</li>
             <li><strong>Focus on improvement:</strong> Frame feedback in terms of how to improve future submissions, not just what was wrong with this one.</li>
           </ul>

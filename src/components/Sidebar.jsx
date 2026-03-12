@@ -36,7 +36,7 @@ function Sidebar({ activeSection, setActiveSection }) {
             If you have not received your alias email or encounter any issues, please contact:
           </p>
               <ul className="support-list">
-                <li>Connor Young</li>
+                <li>Alejandro Sanchez or Randi Mariakis</li>
               </ul>
         </div>
       </div>
