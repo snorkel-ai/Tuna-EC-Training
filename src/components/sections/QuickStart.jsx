@@ -61,7 +61,7 @@ function QuickStart({ setActiveSection }) {
     {
       number: 4,
       visual: 'money',
-      content: <p>Once our expert reviewers approve your task, you get paid!</p>,
+      content: <p>Once our expert reviewers approve your task, you get paid! </p>,
       type: 'success'
     }
   ]
