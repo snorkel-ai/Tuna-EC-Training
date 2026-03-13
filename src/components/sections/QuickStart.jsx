@@ -5,7 +5,7 @@ import anthropicWelcomeImage from '../../../images/Anthropic_welcome.png'
 import capabilityCheckImage from '../../../images/capability_check.png'
 import responseA1Image from '../../../images/responseA_1.png'
 import platform1Image from '../../../images/platform1.png'
-import tunaSubmissionReviewImage from '../../../images/tuna-submission-review2.png'
+import tunaSubmissionReviewImage from '../../../images/tuna-submission-review-v2.png'
 
 function QuickStart({ setActiveSection }) {
   const [currentStep, setCurrentStep] = useState(0)
